@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <!-- 1. We're loading Tailwind CSS to make it look beautiful -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- 2. We're loading a cute, rounded font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- 3. This is where we customize the design -->
+    <style>
+        body {
+            /* Set our cute font as the default */
+            font-family: 'Poppins', sans-serif;
+            
+            /* A beautiful, animated gradient background */
+            background: linear-gradient(-45deg, #fbc2eb, #a6c1ee, #fbc2eb, #a6c1ee);
+            background-size: 400% 400%;
+            animation: gradient-flow 15s ease infinite;
+        }
+
+        /* The animation for the gradient */
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* A class to add a subtle "pop" animation */
+        .pop-in {
+            animation: pop-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+        }
+
+        @keyframes pop-in {
+            0% {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Ensure our screens transition smoothly */
+        .screen {
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        /* When a screen is hidden, it's invisible and off-screen */
+        .screen.hidden {
+            opacity: 0;
+            transform: scale(0.9);
+            /* Use 'display: none' to remove it from layout */
+            display: none; 
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- This is the main container that centers everything -->
+    <div id="app" class="min-h-screen flex items-center justify-center p-4">
+
+        <!-- ===== SCREEN 1: The Welcome Screen ===== -->
+        <!-- You can edit all the text here! -->
+        <div id="screen-welcome" class="screen bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-md w-full text-center">
+            <h1 class="text-3xl font-bold text-rose-500 mb-2">Happy Birthday, [Her Name Here]!</h1>
+            <p class="text-gray-700 text-lg mb-6">I made a little (dorky) surprise for you...</p>
+            <button data-goto="screen-q1" class="w-full bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95 animate-pulse">
+                Click to start!
+            </button>
+        </div>
+        
+        <!-- ===== SCREEN 2: First Question ===== -->
+        <!-- You can edit the question and the answers -->
+        <div id="screen-q1" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-md w-full">
+            <h2 class="text-xl font-bold text-gray-800 text-center mb-6">What's my favorite thing about our relationship?</h2>
+            
+            <!-- These are the "bubble" options -->
+            <button data-goto="screen-q2" class="option-btn">
+                How we laugh at the same weird stuff.
+            </button>
+            <button data-goto="screen-q2" class="option-btn">
+                That time we went to [Place/Event].
+            </button>
+            <button data-goto="screen-q2" class="option-btn">
+                How we can just be lazy and do nothing together.
+            </button>
+            <button data-goto="screen-q2" class="option-btn">
+                ...Actually, it's all of them.
+            </button>
+        </div>
+
+        <!-- ===== SCREEN 3: Second Question ===== -->
+        <div id="screen-q2" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-md w-full">
+            <h2 class="text-xl font-bold text-gray-800 text-center mb-6">Where's our next big adventure?</h2>
+            
+            <button data-goto="screen-reveal" class="option-btn">
+                Hopefully a beach somewhere!
+            </button>
+            <button data-goto="screen-reveal" class="option-btn">
+                The grand opening of... my kitchen. (I'll cook!)
+            </button>
+            <button data-goto="screen-reveal" class="option-btn">
+                Wherever the road takes us!
+            </button>
+        </div>
+
+        <!-- ===== SCREEN 4: The Photo Reveal ===== -->
+        <div id="screen-reveal" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-2xl w-full">
+            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">Which led to some of my favorite memories...</h2>
+
+            <!-- This is the grid for your photos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                
+                <!-- PHOTO 1 -->
+                <!-- 
+                  IMPORTANT: Replace the 'src' link below!
+                  See instructions.md for how to get your own image links.
+                -->
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="https://placehold.co/300x300/fecdd3/db2777?text=Your+Photo+Here" 
+                         alt="Our memory" 
+                         class="w-full h-48 object-cover rounded-xl">
+                    <p class="text-center text-gray-700 mt-2">
+                        <!-- Edit this caption -->
+                        Remember this day?
+                    </p>
+                </div>
+
+                <!-- PHOTO 2 -->
+                <!-- 
+                  IMPORTANT: Replace the 'src' link below!
+                -->
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="https://placehold.co/300x300/e9d5ff/7e22ce?text=Your+Other+Photo" 
+                         alt="Another memory" 
+                         class="w-full h-48 object-cover rounded-xl">
+                    <p class="text-center text-gray-700 mt-2">
+                        <!-- Edit this caption -->
+                        My absolute favorite.
+                    </p>
+                </div>
+
+                <!-- You can copy and paste the <div> above to add more photos! -->
+
+            </div>
+            
+            <button data-goto="screen-final" class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">
+                And one last thing...
+            </button>
+        </div>
+        
+        <!-- ===== SCREEN 5: Final Message ===== -->
+        <div id="screen-final" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-md w-full text-center">
+            <!-- Edit this message! -->
+            <h1 class="text-4xl font-bold text-rose-500 mb-4">Happy Birthday, my love.</h1>
+            <p class="text-gray-700 text-lg">
+                You make every single day brighter. I'm so lucky to have you.
+                <br><br>
+                I love you more than anything.
+                <br><br>
+                ❤️
+            </p>
+        </div>
+
+    </div>
+
+    <!-- This is the JavaScript that makes the screens change -->
+    <script>
+        // This is a helper function to apply all our shared button styles
+        function applyButtonStyles() {
+            const buttons = document.querySelectorAll('.option-btn');
+            buttons.forEach(button => {
+                button.classList.add(
+                    'block', 'w-full', 'bg-white', 'hover:bg-violet-100', 
+                    'text-gray-800', 'font-semibold', 'rounded-2xl', 'p-4', 
+                    'mb-3', 'text-left', 'shadow-md', 'transition-all', 
+                    'hover:shadow-lg', 'hover:scale-102', 'active:scale-98'
+                );
+            });
+        }
+
+        // This function handles changing the screens
+        function showScreen(screenId) {
+            // Find all elements that are screens
+            const allScreens = document.querySelectorAll('.screen');
+            
+            // First, hide all of them
+            allScreens.forEach(screen => {
+                // Add 'hidden' to apply 'display: none' and our exit animation
+                screen.classList.add('hidden');
+            });
+            
+            // Now, find the one screen we *want* to show
+            const targetScreen = document.getElementById(screenId);
+            
+            if (targetScreen) {
+                // Remove 'hidden' to make it visible
+                // We wrap this in a tiny delay (1ms)
+                // This forces the browser to apply the 'display: none' from .hidden first,
+                // then remove it, allowing our 'pop-in' animation to play correctly.
+                setTimeout(() => {
+                    targetScreen.classList.remove('hidden');
+                    // Add the pop-in animation class
+                    targetScreen.classList.add('pop-in');
+                }, 1); 
+            }
+        }
+
+        // This runs when the page is finished loading
+        document.addEventListener('DOMContentLoaded', () => {
+            // Style all our option buttons
+            applyButtonStyles();
+
+            // Find all buttons that have the 'data-goto' attribute
+            const navigationButtons = document.querySelectorAll('[data-goto]');
+            
+            // Add a click listener to every single one
+            navigationButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Get the ID of the screen to go to
+                    const targetScreenId = button.getAttribute('data-goto');
+                    // Show that screen
+                    showScreen(targetScreenId);
+                });
+            });
+            
+            // Show the very first screen (the welcome one) to start
+            // We do this here to make sure the 'hidden' classes are all set first
+            showScreen('screen-welcome');
+        });
+    </script>
+</body>
+</html>
