@@ -63,6 +63,20 @@
             display: none; 
         }
 
+        /* A nice style for the "note" section */
+        blockquote {
+            border-left: 4px solid #c084fc; /* A nice violet color */
+            padding-left: 1rem;
+            font-style: italic;
+            color: #374151; /* gray-700 */
+            margin-bottom: 1.5rem; /* 24px */
+            background-color: #f3e8ff; /* purple-50 */
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-right: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+
     </style>
 </head>
 <body class="antialiased">
@@ -76,173 +90,203 @@
             <h1 class="text-3xl font-bold text-rose-500 mb-2">Happy Birthday, BBdoll!</h1>
             <!-- Your paragraph -->
             <p class="text-gray-700 text-lg mb-6">I made a little bday surprise for you... Hope you like it🙈</p>
-            <!-- This button now goes to the new 'screen-questions' -->
-            <button data-goto="screen-questions" class="w-full bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95 animate-pulse">
+            <!-- This button now goes to the new 'screen-menu' -->
+            <button data-goto="screen-menu" class="w-full bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95 animate-pulse">
                 Click to start!
             </button>
         </div>
         
-        <!-- ===== SCREEN 2: The Main Question (Personalized) ===== -->
-        <!-- This is the main hub. Each button goes to a DIFFERENT reveal screen -->
-        <div id="screen-questions" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-md w-full">
-            <!-- Your Question -->
-            <h2 class="text-xl font-bold text-gray-800 text-center mb-6">What's my favorite thing about our relationship?</h2>
+        <!-- ===== SCREEN 2: The Main Menu (NEW) ===== -->
+        <!-- This is the new hub. -->
+        <div id="screen-menu" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-md w-full">
+            <h2 class="text-xl font-bold text-gray-800 text-center mb-6">What's on your mind, my love?</h2>
             
-            <!-- Option 1 (from your code) -->
-            <button data-goto="screen-reveal-1" class="option-btn">
-                How we laugh at the same weird stuff.
+            <!-- Option 1: Memories -->
+            <button data-goto="screen-memories-hub" class="option-btn">
+                📖 Explore Our Memory Box
             </button>
             
-            <!-- Option 2 (from your code) -->
-            <button data-goto="screen-reveal-2" class="option-btn">
-                That time we went to [Place/Event].
+            <!-- Option 2: Moods -->
+            <button data-goto="screen-moods" class="option-btn">
+                💌 A Note for All Your Moods
             </button>
-            
-            <!-- Option 3 (from your code) -->
-            <button data-goto="screen-reveal-3" class="option-btn">
-                How we can just be lazy and do nothing together.
+
+            <!-- Option 3: Final Message -->
+            <button data-goto="screen-final" class="option-btn bg-violet-100 hover:bg-violet-200">
+                ❤️ Go to the final message...
             </button>
         </div>
 
-        <!-- ============================================= -->
-        <!-- ===== REVEAL SCREEN 1 (for Option 1) ====== -->
-        <!-- ============================================= -->
-        <div id="screen-reveal-1" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-2xl w-full">
-            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">...like all the inside jokes!</h2>
+        <!-- ===== SCREEN 3: Memories Hub (NEW) ===== -->
+        <div id="screen-memories-hub" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-md w-full">
+            <h2 class="text-xl font-bold text-gray-800 text-center mb-6">Our Memory Box</h2>
+            
+            <!-- Your 4 categories -->
+            <button data-goto="screen-reveal-hasi" class="option-btn">
+                Hasi (Our Laughter) 😄
+            </button>
+            <button data-goto="screen-reveal-pagalpan" class="option-btn">
+                Pagalpan (Our Craziness) 🤪
+            </button>
+            <button data-goto="screen-reveal-serious" class="option-btn">
+                Serious Looks (So intense!) 🤔
+            </button>
+            <button data-goto="screen-reveal-roti" class="option-btn">
+                Ro leti hun thoda (It's okay 🥺)
+            </button>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                
+            <!-- Back Button -->
+            <button data-goto="screen-menu" class="mt-4 w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">
+                Back to Main Menu
+            </button>
+        </div>
+
+
+        <!-- ============================================= -->
+        <!-- ===== REVEAL SCREEN 1: Hasi ====== -->
+        <!-- ============================================= -->
+        <div id="screen-reveal-hasi" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-4xl w-full">
+            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">Hasi (Our Laughter) 😄</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                 <!-- PHOTO 1A -->
-                <!-- 
-                  IMPORTANT: Upload your photos to GitHub (e.g., "photo1a.jpg")
-                  and put the file name in the 'src' below.
-                -->
                 <div class="bg-white p-3 rounded-2xl shadow-lg">
-                    <img src="photo1a.jpg" 
-                         alt="Our memory" 
-                         class="w-full h-48 object-cover rounded-xl"
-                         onerror="this.src='https://placehold.co/300x300/fecdd3/db2777?text=photo1a.jpg'">
-                    <p class="text-center text-gray-700 mt-2">
-                        <!-- Edit this caption -->
-                        This silly face...
-                    </p>
+                    <img src="hasi1.jpg" alt="Hasi 1" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/fecdd3/db2777?text=hasi1.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Hasi 1</p>
                 </div>
-
                 <!-- PHOTO 1B -->
                 <div class="bg-white p-3 rounded-2xl shadow-lg">
-                    <img src="photo1b.jpg" 
-                         alt="Another memory" 
-                         class="w-full h-48 object-cover rounded-xl"
-                         onerror="this.src='https://placehold.co/300x300/fecdd3/db2777?text=photo1b.jpg'">
-                    <p class="text-center text-gray-700 mt-2">
-                        <!-- Edit this caption -->
-                        I can't believe we laughed so hard at this.
-                    </p>
+                    <img src="hasi2.jpg" alt="Hasi 2" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/fecdd3/db2777?text=hasi2.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Hasi 2</p>
+                </div>
+                <!-- PHOTO 1C -->
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="hasi3.jpg" alt="Hasi 3" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/fecdd3/db2777?text=hasi3.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Hasi 3</p>
                 </div>
             </div>
-            
             <!-- Navigation Buttons -->
             <div class="flex flex-col sm:flex-row gap-2">
-                <!-- Back Button -->
-                <button data-goto="screen-questions" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">
-                    Try another memory!
-                </button>
-                <!-- Next Button -->
-                <button data-goto="screen-final" class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">
-                    And one last thing...
-                </button>
+                <button data-goto="screen-memories-hub" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">Back to Memories</button>
+                <button data-goto="screen-final" class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">And one last thing...</button>
             </div>
         </div>
 
         <!-- ============================================= -->
-        <!-- ===== REVEAL SCREEN 2 (for Option 2) ====== -->
+        <!-- ===== REVEAL SCREEN 2: Pagalpan ====== -->
         <!-- ============================================= -->
-        <div id="screen-reveal-2" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-2xl w-full">
-            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">That trip was my favorite...</h2>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                
+        <div id="screen-reveal-pagalpan" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-4xl w-full">
+            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">Pagalpan (Our Craziness) 🤪</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                 <!-- PHOTO 2A -->
                 <div class="bg-white p-3 rounded-2xl shadow-lg">
-                    <img src="photo2a.jpg" 
-                         alt="Our memory" 
-                         class="w-full h-48 object-cover rounded-xl"
-                         onerror="this.src='https://placehold.co/300x300/e9d5ff/7e22ce?text=photo2a.jpg'">
-                    <p class="text-center text-gray-700 mt-2">
-                        <!-- Edit this caption -->
-                        The view was almost as good as you.
-                    </p>
+                    <img src="pagalpan1.jpg" alt="Pagalpan 1" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/e9d5ff/7e22ce?text=pagalpan1.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Pagalpan 1</p>
                 </div>
-
                 <!-- PHOTO 2B -->
                 <div class="bg-white p-3 rounded-2xl shadow-lg">
-                    <img src="photo2b.jpg" 
-                         alt="Another memory" 
-                         class="w-full h-48 object-cover rounded-xl"
-                         onerror="this.src='https://placehold.co/300x300/e9d5ff/7e22ce?text=photo2b.jpg'">
-                    <p class="text-center text-gray-700 mt-2">
-                        <!-- Edit this caption -->
-                        So glad we went here.
-                    </p>
+                    <img src="pagalpan2.jpg" alt="Pagalpan 2" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/e9d5ff/7e22ce?text=pagalpan2.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Pagalpan 2</p>
+                </div>
+                <!-- PHOTO 2C -->
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="pagalpan3.jpg" alt="Pagalpan 3" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/e9d5ff/7e22ce?text=pagalpan3.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Pagalpan 3</p>
                 </div>
             </div>
-            
             <!-- Navigation Buttons -->
             <div class="flex flex-col sm:flex-row gap-2">
-                <!-- Back Button -->
-                <button data-goto="screen-questions" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">
-                    Try another memory!
-                </button>
-                <!-- Next Button -->
-                <button data-goto="screen-final" class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">
-                    And one last thing...
-                </button>
+                <button data-goto="screen-memories-hub" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">Back to Memories</button>
+                <button data-goto="screen-final" class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">And one last thing...</button>
             </div>
         </div>
-        
-        <!-- ============================================= -->
-        <!-- ===== REVEAL SCREEN 3 (for Option 3) ====== -->
-        <!-- ============================================= -->
-        <div id="screen-reveal-3" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-2xl w-full">
-            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">Nothing beats just relaxing with you.</h2>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                
+        <!-- ============================================= -->
+        <!-- ===== REVEAL SCREEN 3: Serious Looks ====== -->
+        <!-- ============================================= -->
+        <div id="screen-reveal-serious" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-4xl w-full">
+            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">Serious Looks (So intense!) 🤔</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
                 <!-- PHOTO 3A -->
                 <div class="bg-white p-3 rounded-2xl shadow-lg">
-                    <img src="photo3a.jpg" 
-                         alt="Our memory" 
-                         class="w-full h-48 object-cover rounded-xl"
-                         onerror="this.src='https://placehold.co/300x300/dbeafe/1d4ed8?text=photo3a.jpg'">
-                    <p class="text-center text-gray-700 mt-2">
-                        <!-- Edit this caption -->
-                        Favorite movie night.
-                    </p>
+                    <img src="serious1.jpg" alt="Serious 1" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/dbeafe/1d4ed8?text=serious1.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Serious 1</p>
                 </div>
-
                 <!-- PHOTO 3B -->
                 <div class="bg-white p-3 rounded-2xl shadow-lg">
-                    <img src="photo3b.jpg" 
-                         alt="Another memory" 
-                         class="w-full h-48 object-cover rounded-xl"
-                         onerror="this.src='https://placehold.co/300x300/dbeafe/1d4ed8?text=photo3b.jpg'">
-                    <p class="text-center text-gray-700 mt-2">
-                        <!-- Edit this caption -->
-                        (We both fell asleep 10 mins later)
-                    </p>
+                    <img src="serious2.jpg" alt="Serious 2" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/dbeafe/1d4ed8?text=serious2.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Serious 2</p>
+                </div>
+                <!-- PHOTO 3C -->
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="serious3.jpg" alt="Serious 3" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/dbeafe/1d4ed8?text=serious3.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Serious 3</p>
+                </div>
+            </div>
+            <!-- Navigation Buttons -->
+            <div class="flex flex-col sm:flex-row gap-2">
+                <button data-goto="screen-memories-hub" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">Back to Memories</button>
+                <button data-goto="screen-final" class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">And one last thing...</button>
+            </div>
+        </div>
+
+        <!-- ============================================= -->
+        <!-- ===== REVEAL SCREEN 4: Ro leti hun thoda ====== -->
+        <!-- ============================================= -->
+        <div id="screen-reveal-roti" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-4xl w-full">
+            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">Ro leti hun thoda (It's okay 🥺)</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                <!-- PHOTO 4A -->
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="roti1.jpg" alt="Roti 1" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/fef3c7/f59e0b?text=roti1.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Roti 1</p>
+                </div>
+                <!-- PHOTO 4B -->
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="roti2.jpg" alt="Roti 2" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/fef3c7/f59e0b?text=roti2.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Roti 2</p>
+                </div>
+                <!-- PHOTO 4C -->
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="roti3.jpg" alt="Roti 3" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/fef3c7/f59e0b?text=roti3.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Roti 3</p>
+                </div>
+            </div>
+            <!-- Navigation Buttons -->
+            <div class="flex flex-col sm:flex-row gap-2">
+                <button data-goto="screen-memories-hub" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">Back to Memories</button>
+                <button data-goto="screen-final" class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">And one last thing...</button>
+            </div>
+        </div>
+
+        <!-- ============================================= -->
+        <!-- ===== SCREEN - MOODS (NEW) ====== -->
+        <!-- ============================================= -->
+        <div id="screen-moods" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-2xl w-full">
+            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">A Little Note for All Your Moods 💌</h2>
+            
+            <!-- This is the text area you can edit -->
+            <blockquote>
+                This is a special note just for you. You can write about how you love all her moods, or a specific memory. 
+                <br><br>
+                Keep writing here, and it will all appear in this cute little box. I'll modify it later!
+            </blockquote>
+
+            <!-- 2 Photo slots for this section -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="mood1.jpg" alt="Mood 1" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/cffafe/06b6d4?text=mood1.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Mood Photo 1</p>
+                </div>
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="mood2.jpg" alt="Mood 2" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/cffafe/06b6d4?text=mood2.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Mood Photo 2</p>
                 </div>
             </div>
             
             <!-- Navigation Buttons -->
             <div class="flex flex-col sm:flex-row gap-2">
-                <!-- Back Button -->
-                <button data-goto="screen-questions" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">
-                    Try another memory!
-                </button>
-                <!-- Next Button -->
-                <button data-goto="screen-final" class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">
-                    And one last thing...
-                </button>
+                <button data-goto="screen-menu" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">Back to Main Menu</button>
+                <button data-goto="screen-final" class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">And one last thing...</button>
             </div>
         </div>
 
@@ -299,7 +343,7 @@
                 // Remove 'hidden' to make it visible
                 // We wrap this in a tiny delay (1ms)
                 // This forces the browser to apply the 'display: none' from .hidden first,
-                // then remove it, allowing our 'pop-in' animation to play correctly.
+                // then remove it, allowing our 'pop-in'
                 setTimeout(() => {
                     targetScreen.classList.remove('hidden');
                     // Add the pop-in animation class
