@@ -106,8 +106,8 @@
                 📖 Explore Our Memory Box
             </button>
             
-            <!-- Option 2: Moods -->
-            <button data-goto="screen-moods" class="option-btn">
+            <!-- Option 2: Moods (Now goes to NEW Moods Hub) -->
+            <button data-goto="screen-moods-hub" class="option-btn">
                 💌 A Note for All Your Moods
             </button>
 
@@ -117,7 +117,7 @@
             </button>
         </div>
 
-        <!-- ===== SCREEN 3: Memories Hub (NEW) ===== -->
+        <!-- ===== SCREEN 3: Memories Hub (Unchanged) ===== -->
         <div id="screen-memories-hub" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-md w-full">
             <h2 class="text-xl font-bold text-gray-800 text-center mb-6">Our Memory Box</h2>
             
@@ -143,8 +143,10 @@
 
 
         <!-- ============================================= -->
-        <!-- ===== REVEAL SCREEN 1: Hasi ====== -->
+        <!-- ===== MEMORY REVEAL SCREENS (Unchanged) ===== -->
         <!-- ============================================= -->
+
+        <!-- ===== REVEAL SCREEN 1: Hasi ====== -->
         <div id="screen-reveal-hasi" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-4xl w-full">
             <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">Hasi (Our Laughter) 😄</h2>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
@@ -171,9 +173,7 @@
             </div>
         </div>
 
-        <!-- ============================================= -->
         <!-- ===== REVEAL SCREEN 2: Pagalpan ====== -->
-        <!-- ============================================= -->
         <div id="screen-reveal-pagalpan" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-4xl w-full">
             <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">Pagalpan (Our Craziness) 🤪</h2>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
@@ -200,9 +200,7 @@
             </div>
         </div>
 
-        <!-- ============================================= -->
         <!-- ===== REVEAL SCREEN 3: Serious Looks ====== -->
-        <!-- ============================================= -->
         <div id="screen-reveal-serious" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-4xl w-full">
             <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">Serious Looks (So intense!) 🤔</h2>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
@@ -229,9 +227,7 @@
             </div>
         </div>
 
-        <!-- ============================================= -->
         <!-- ===== REVEAL SCREEN 4: Ro leti hun thoda ====== -->
-        <!-- ============================================= -->
         <div id="screen-reveal-roti" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-4xl w-full">
             <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">Ro leti hun thoda (It's okay 🥺)</h2>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
@@ -258,38 +254,186 @@
             </div>
         </div>
 
+        
         <!-- ============================================= -->
-        <!-- ===== SCREEN - MOODS (NEW) ====== -->
+        <!-- ===== NEW MOODS HUB ===== -->
         <!-- ============================================= -->
-        <div id="screen-moods" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-2xl w-full">
-            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">A Little Note for All Your Moods 💌</h2>
+        <div id="screen-moods-hub" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-md w-full">
+            <h2 class="text-xl font-bold text-gray-800 text-center mb-6">A Note for All Your Moods 💌</h2>
             
-            <!-- This is the text area you can edit -->
-            <blockquote>
-                This is a special note just for you. You can write about how you love all her moods, or a specific memory. 
-                <br><br>
-                Keep writing here, and it will all appear in this cute little box. I'll modify it later!
-            </blockquote>
+            <!-- Your 7 mood categories -->
+            <button data-goto="screen-reveal-happy" class="option-btn">I am happy 😄</button>
+            <button data-goto="screen-reveal-sad" class="option-btn">I am sad 🥺</button>
+            <button data-goto="screen-reveal-tensed" class="option-btn">I am tensed 😬</button>
+            <button data-goto="screen-reveal-confident" class="option-btn">I don't feel so confident 😔</button>
+            <button data-goto="screen-reveal-pata" class="option-btn">Pata Nahi yaar... 🤔</button>
+            <button data-goto="screen-reveal-sleepy" class="option-btn">I am super sleepy 😴</button>
+            <button data-goto="screen-reveal-love" class="option-btn">I love you ❤️</button>
 
-            <!-- 2 Photo slots for this section -->
+            <!-- Back Button -->
+            <button data-goto="screen-menu" class="mt-4 w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">
+                Back to Main Menu
+            </button>
+        </div>
+
+
+        <!-- ============================================= -->
+        <!-- ===== NEW MOOD REVEAL SCREENS (7 of them) ===== -->
+        <!-- ============================================= -->
+
+        <!-- ===== REVEAL SCREEN - I am happy ====== -->
+        <div id="screen-reveal-happy" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-2xl w-full">
+            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">When you're happy... 😄</h2>
+            <blockquote>
+                ...the whole world lights up. Your smile is my favorite thing, and I love seeing you this way. Keep shining, my love.
+            </blockquote>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
                 <div class="bg-white p-3 rounded-2xl shadow-lg">
-                    <img src="mood1.jpg" alt="Mood 1" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/cffafe/06b6d4?text=mood1.jpg'">
-                    <p class="text-center text-gray-700 mt-2">Caption for Mood Photo 1</p>
+                    <img src="happy1.jpg" alt="Happy 1" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/d9f99d/65a30d?text=happy1.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Happy 1</p>
                 </div>
                 <div class="bg-white p-3 rounded-2xl shadow-lg">
-                    <img src="mood2.jpg" alt="Mood 2" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/cffafe/06b6d4?text=mood2.jpg'">
-                    <p class="text-center text-gray-700 mt-2">Caption for Mood Photo 2</p>
+                    <img src="happy2.jpg" alt="Happy 2" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/d9f99d/65a30d?text=happy2.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Happy 2</p>
                 </div>
             </div>
-            
-            <!-- Navigation Buttons -->
             <div class="flex flex-col sm:flex-row gap-2">
-                <button data-goto="screen-menu" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">Back to Main Menu</button>
+                <button data-goto="screen-moods-hub" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">Back to Moods</button>
                 <button data-goto="screen-final" class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">And one last thing...</button>
             </div>
         </div>
 
+        <!-- ===== REVEAL SCREEN - I am sad ====== -->
+        <div id="screen-reveal-sad" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-2xl w-full">
+            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">When you're sad... 🥺</h2>
+            <blockquote>
+                ...please remember you're not alone. I'm right here. Your feelings are valid, and I'll hold you until it feels a little better.
+            </blockquote>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="sad1.jpg" alt="Sad 1" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/dbeafe/1e40af?text=sad1.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Sad 1</p>
+                </div>
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="sad2.jpg" alt="Sad 2" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/dbeafe/1e40af?text=sad2.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Sad 2</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <button data-goto="screen-moods-hub" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">Back to Moods</button>
+                <button data-goto="screen-final" class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">And one last thing...</button>
+            </div>
+        </div>
+
+        <!-- ===== REVEAL SCREEN - I am tensed ====== -->
+        <div id="screen-reveal-tensed" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-2xl w-full">
+            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">When you're tensed... 😬</h2>
+            <blockquote>
+                ...just breathe. Take my hand. Whatever is stressing you out, we can figure it out together. You're the most capable person I know.
+            </blockquote>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="tensed1.jpg" alt="Tensed 1" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/fee2e2/b91c1c?text=tensed1.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Tensed 1</p>
+                </div>
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="tensed2.jpg" alt="Tensed 2" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/fee2e2/b91c1c?text=tensed2.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Tensed 2</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <button data-goto="screen-moods-hub" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">Back to Moods</button>
+                <button data-goto="screen-final" class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">And one last thing...</button>
+            </div>
+        </div>
+
+        <!-- ===== REVEAL SCREEN - I don't feel so confident ====== -->
+        <div id="screen-reveal-confident" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-2xl w-full">
+            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">When you don't feel confident... 😔</h2>
+            <blockquote>
+                ...I wish you could see yourself through my eyes. You are brilliant, strong, and beautiful. You can do anything. I'm your #1 fan, always.
+            </blockquote>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="confident1.jpg" alt="Confident 1" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/f5d0fe/a21caf?text=confident1.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Confident 1</p>
+                </div>
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="confident2.jpg" alt="Confident 2" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/f5d0fe/a21caf?text=confident2.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Confident 2</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <button data-goto="screen-moods-hub" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">Back to Moods</button>
+                <button data-goto="screen-final" class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">And one last thing...</button>
+            </div>
+        </div>
+
+        <!-- ===== REVEAL SCREEN - Pata Nahi yaar ====== -->
+        <div id="screen-reveal-pata" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-2xl w-full">
+            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">When it's all "Pata Nahi yaar..." 🤔</h2>
+            <blockquote>
+                ...that's okay too. You don't always have to have the answers. It's okay to be confused. Let's just sit here and be confused together.
+            </blockquote>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="pata1.jpg" alt="Pata 1" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/d1d5db/4b5563?text=pata1.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Pata Nahi 1</p>
+                </div>
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="pata2.jpg" alt="Pata 2" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/d1d5db/4b5563?text=pata2.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Pata Nahi 2</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <button data-goto="screen-moods-hub" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">Back to Moods</button>
+                <button data-goto="screen-final" class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">And one last thing...</button>
+            </div>
+        </div>
+
+        <!-- ===== REVEAL SCREEN - I am super sleepy ====== -->
+        <div id="screen-reveal-sleepy" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-2xl w-full">
+            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">When you're super sleepy... 😴</h2>
+            <blockquote>
+                ...it's the cutest thing ever. Go get some rest, my love. The world can wait. I'll be right here when you wake up.
+            </blockquote>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="sleepy1.jpg" alt="Sleepy 1" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/e0e7ff/3730a3?text=sleepy1.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Sleepy 1</p>
+                </div>
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="sleepy2.jpg" alt="Sleepy 2" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/e0e7ff/3730a3?text=sleepy2.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Sleepy 2</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <button data-goto="screen-moods-hub" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">Back to Moods</button>
+                <button data-goto="screen-final" class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">And one last thing...</button>
+            </div>
+        </div>
+
+        <!-- ===== REVEAL SCREEN - I love you ====== -->
+        <div id="screen-reveal-love" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-2xl w-full">
+            <h2 class="text-2xl font-bold text-violet-600 text-center mb-6">When you say "I love you"... ❤️</h2>
+            <blockquote>
+                ...it's my favorite sound in the world. I love you more than words can say. Every day. In every mood.
+            </blockquote>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="love1.jpg" alt="Love 1" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/ffe4e6/db2777?text=love1.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Love 1</p>
+                </div>
+                <div class="bg-white p-3 rounded-2xl shadow-lg">
+                    <img src="love2.jpg" alt="Love 2" class="w-full h-48 object-cover rounded-xl" onerror="this.src='https://placehold.co/300x300/ffe4e6/db2777?text=love2.jpg'">
+                    <p class="text-center text-gray-700 mt-2">Caption for Love 2</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <button data-goto="screen-moods-hub" class="w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">Back to Moods</button>
+                <button data-goto="screen-final" class="w-full bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-full py-3 px-6 shadow-lg transition-transform hover:scale-105 active:scale-95">And one last thing...</button>
+            </div>
+        </div>
         
         <!-- ===== SCREEN - FINAL: Final Message (Personalized) ===== -->
         <div id="screen-final" class="screen hidden bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-8 max-w-md w-full text-center">
